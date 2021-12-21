@@ -23,8 +23,6 @@ jobs:
         ref: master
         # REQUIRED if your upstream repo is private (see wiki)
         persist-credentials: false
-    - name: Git Config
-      run: git config --local 
     # REQUIRED step
     # Step 2: run the sync action
     - name: Sync upstream changes
