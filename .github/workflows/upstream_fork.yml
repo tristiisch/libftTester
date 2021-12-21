@@ -23,7 +23,8 @@ jobs:
         ref: master
         # REQUIRED if your upstream repo is private (see wiki)
         persist-credentials: false
-
+    - name: Git Config
+      run: git config --local 
     # REQUIRED step
     # Step 2: run the sync action
     - name: Sync upstream changes
@@ -34,11 +35,11 @@ jobs:
         # REQUIRED 'target_repo_token' exactly like this!
         target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: main
-        upstream_sync_repo: aormsby/Fork-Sync-With-Upstream-action
+        upstream_sync_repo: Tripouille/libftTester
         upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
         # Set test_mode true to run tests instead of the true action!!
-        test_mode: true
+        test_mode: false
       
     # Step 3: Display a sample message based on the sync output var 'has_new_commits'
     - name: New commits found
